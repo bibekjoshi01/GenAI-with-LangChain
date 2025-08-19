@@ -1,4 +1,6 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
+import os
+os.environ["HF_HOME"] = "/Users/bibekjoshi01/Desktop/Langchain/models"
 
 model_id = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 
