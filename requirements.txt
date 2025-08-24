@@ -27,3 +27,4 @@ sentence-transformers
 
 # UI
 streamlit
+grandalf
