@@ -1,5 +1,6 @@
 langchain
 langchain-core
+langchain-community
 
 # OpenAI Integration
 langchain-OpenAI
@@ -28,3 +29,7 @@ sentence-transformers
 # UI
 streamlit
 grandalf
+
+# Other
+pypdf
+bs4
