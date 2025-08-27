@@ -1,0 +1,69 @@
+What is a database administrator (DBA)?
+A database administrator (DBA) is the information technician responsible for directing and performing all activities related to maintaining and securing a successful database environment. A DBA ensures an organization's databases and related applications operate functionally and efficiently.
+
+DBAs frequently design and develop new features and debug issues, while working alongside a diverse group of individuals such as developers, data architects and business stakeholders. Therefore, they're expected to be proficient in both technical and business skills.
+
+Why are DBAs important?
+For any organization that uses a database management system (DBMS) for mission-critical workloads, it's important to have one or more database administrators on board to ensure that applications have ongoing, uninterrupted access to data. Most organizations use at least one DBMS, and therefore the need for database administrators is greater today than ever before.
+
+The following highlights the importance of database administrators:
+
+DBAs are responsible for understanding and managing the overall database environment. By developing and executing a strategic blueprint to follow when deploying databases within their organization, DBAs are instrumental in the ongoing efficacy of applications that rely on databases for data storage and access.
+Without the DBA's oversight, application and system outages, downtime and slowdowns will inevitably occur. These kinds of problems result in business outages that can negatively affect revenue, customer experiences and business reputation.
+DBAs monitor database performance, detect bottlenecks and optimize queries, configurations and indexes to ensure optimal performance and reliability of databases.
+DBAs are the subject matter experts for database management systems and all related topics, including DBMS setup and configuration; database design; structured query language (SQL) coding; data extraction, transformation and loading (ETL); test data management; problem resolution; data security and integrity; database security; performance management; optimization; and database backup and recovery.
+DBAs use security techniques such as access controls, encryption and data masking to protect data integrity and confidentiality of databases, reducing the risks associated with data breaches and compliance violations.
+DBAs possess the skills to convert unprocessed data into meaningful business intelligence. They're crucial in helping to glean insightful information from data, which is necessary for the organization's decision-making process.
+What are the roles and responsibilities of a DBA?
+A DBA assumes many different roles and responsibilities within the IT department involving database systems and applications.
+
+The roles and responsibilities of a DBA typically include the following:
+
+Database deployment and management. The DBA keeps databases and applications running up to performance, availability and recoverability standards while handling additional functions. When adopting a new DBMS, the DBA is responsible for designing, setting up and maintaining the database system. Often that includes installing the DBMS and setting up the IT infrastructure to enable applications to access databases. For a cloud database implementation, the DBA isn't responsible for installation but must orchestrate the proper configuration, access and deployment options for their organization's use of the cloud database.
+Documentation and training. The DBA must also establish policies and procedures pertaining to the management, security, maintenance and use of the database management system. The DBA group creates training materials and instructs employees and developers on the proper access and usage of the DBMS.
+Troubleshooting. When problems arise, the DBA is the focal point for resolution, including troubleshooting, root cause analysis, fine tuning and optimizing the performance of tasks and programs that access the database. The DBA must be capable of performing root cause analysis -- identifying the cause of the problem so it can be resolved. This task requires the ability to locate bottlenecks and points of contention, monitor workload and throughput, review SQL performance and optimization, monitor storage space and fragmentation and view and manage the system and DBMS resource use.
+Backup and disaster recovery. The DBA is responsible for ensuring that databases and data are backed up appropriately and can be recovered correctly and quickly in the event of failure. The DBA also ensures that databases are protected and secured, enacts measures to maintain the database integrity in terms of data accuracy and makes sure unauthorized users can't access the data.
+Collaboration and integration. The DBA frequently gets pulled into other projects as a subject matter expert on the database. Because databases are at the center of most modern application development projects, the DBA participates in database integration and use in a variety of IT projects. This exposure to many different technologies and experiences can make the DBA a valuable IT technician not just for database-related issues, but for other technologies as well.
+Efficient database design. Database administrators work with application developers to ensure accurate and efficient application design for database access. DBA tasks include interfacing SQL with traditional programming languages, selecting the type of SQL to use, using middleware and APIs such as REST, Open Database Connectivity, Java Database Connectivity and SQLJ effectively, defining transactions and determining the appropriate use of frameworks such as Java Enterprise Edition and .NET. DBAs might also be asked to modify or write application code to help development projects.
+Optimizing database performance. Database performance is the optimization of resource usage to increase throughput and minimize contention, enabling the largest possible workload to be processed. Ensuring efficient performance of the database and applications that access it is a core function of database administration.
+Staying current. As the central point of contact for information about the company's database management systems, DBAs must keep up to date on the latest versions and capabilities of each DBMS.
+Using the right tools. Administering a DBMS usually requires the use of other tools than those provided with the DBMS. DBAs must understand the strengths and weaknesses of native DBA tools, develop a strategy for addressing the weaknesses and use tools that improve the performance, availability, administration and recovery of the databases they manage.
+User access and support. A DBA creates new user accounts and provides access permissions. They also create and manage database reports, visualizations and dashboards to help users easily understand the status of their database.
+Communication. DBAs must have good communication skills. They must be able to converse and work with application programmers, business end users, IT and business managers, data analysts and other DBAs.
+A description of the functions of different DBA roles.
+DBAs take on a variety of tasks.
+What are the different types of DBAs?
+Many different types of DBAs exist, the most common type being the general-purpose DBA, who performs all types of administrative and data-related work. However, it isn't uncommon for DBAs to focus on specific problem domains. A DBA, for example, might focus entirely on database design, perhaps broken into logical design and physical design; specialize in building systems; concentrate on maintaining and tuning existing systems; or center their attention on narrow areas of database management and administration.
+
+This article is part of
+
+What is a cloud database? An in-depth cloud DBMS guide
+Which also includes:
+Should you run your database on premises or in the cloud?
+Cloud DBA: How cloud changes database administrator's role
+On-premises vs. cloud data warehouses: Pros and cons
+Within larger organizations, DBA responsibilities typically are split into separate types of roles. Beyond general-purpose, the primary roles include system DBA, database architect, database analyst, application DBA, task-oriented DBA, performance analyst, data warehouse administrator and cloud DBA.
+
+System DBA
+This role focuses on technical, rather than business, issues. The system DBA is knowledgeable in the arcane technical details of how the database is installed, configured and modified. Typical tasks center on the physical installation and performance of the DBMS software and can include the following:
+
+Installing new software versions and applying fixes.
+Setting and tuning system parameters.
+Tuning the operating system, network and transaction processors to work with the DBMS.
+Ensuring appropriate storage and memory are available for the DBMS.
+System DBAs are rarely involved with the actual database and application set up. They might get involved in application tuning when operating system parameters or complex DBMS parameters need to be altered.
+
+Database architect
+The primary responsibility of this role is the design and set up of new databases. The database architect designs new databases and database structures for new and existing applications and is rarely involved in the maintenance and tuning of established databases and applications. Typical tasks include the following:
+
+Modeling logical data.
+Translating logical data models into a physical database design.
+Analyzing data access requirements to ensure optimal database design and efficient SQL access.
+Creating backup and recovery strategies for new databases.
+Database analyst
+Sometimes junior DBAs are referred to as database analysts. The database analyst's role might be like that of the database architect. The database analyst designation can be another name for a database administrator.
+
+Application DBA
+An application DBA focuses on database design and the ongoing database support and administration for a specific application or subset of applications. The application DBA is likely an expert in writing and debugging complex SQL. They understand the best ways to incorporate database requests into application programs. Application DBAs typically are also responsible for managing and refreshing test data for application development teams.
+
+Not every organization has an application DBA on staff. In that case, the general-purpose DBA supports specific applications while also maintaining the organization's database environment. But even with an application DBA on board, general-purpose DBAs are still required to support the overall database environment and infrastructure.
