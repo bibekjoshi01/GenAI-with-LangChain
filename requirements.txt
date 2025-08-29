@@ -33,3 +33,4 @@ grandalf
 # Other
 pypdf
 bs4
+chromadb
