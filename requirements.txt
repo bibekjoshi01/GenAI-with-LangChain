@@ -34,3 +34,4 @@ grandalf
 pypdf
 bs4
 chromadb
+wikipedia
