@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Notice Title",
+    "description": "Notice description goes here",
+    "date": "2025-09-05",
+    "file_url": "https://www.immigration.gov.np/upload/example_file.pdf"
+  },
+  {
+    "title": "Another Notice Title",
+    "description": "Another notice description goes here",
+    "date": "2025-09-05",
+    "file_url": ""
+  }
+]

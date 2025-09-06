@@ -1,19 +1,22 @@
 import os
 import json
+from datetime import datetime
 from dotenv import load_dotenv
+
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
 from langchain.output_parsers import OutputFixingParser
 from langchain_core.output_parsers import JsonOutputParser
 
-# Load Project Imports
-from scrapper import scrap_notices
+from utils import save_structured_json
 from schema import NoticeList
 
-# Load environment variables
+# Load env
 load_dotenv()
 
-# Setup HuggingFace endpoint
+# -----------------------------
+# LLM Setup
+# -----------------------------
 endpoint = HuggingFaceEndpoint(
     repo_id="mistralai/Mistral-7B-Instruct-v0.3",
     task="text-generation",
@@ -26,29 +29,57 @@ endpoint = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=endpoint)
 
-# Define Parsers
+
 parser = JsonOutputParser(pydantic_object=NoticeList)
 fixed_parser = OutputFixingParser.from_llm(llm=model, parser=parser)
 
-# Prompt
-template = PromptTemplate(
-    template="""You are given scraped page contents from websites. 
-Extract notices from them and return only in JSON format (title, description, date) Include these three in all instances if not availble leave blank.
 
-Context:
+template = PromptTemplate(
+    template="""You are given scraped page contents from a website. 
+Extract notices of today's date {date_ad} and return only JSON with the following fields: 
+- title: the title text (no HTML tags)
+- description: the notice description (plain text, no HTML)
+- date: the date of the notice
+- file_url: the absolute URL of any associated file or image (if available, otherwise leave blank)
+
+Include all fields; if missing leave blank.
+
+HTML Content:
 {context}
 """,
-    input_variables=["context"],
+    input_variables=["context", "date_ad"],
 )
 
-chain = template | model | fixed_parser
 
-# Convert scraped docs to text
-docs = scrap_notices()
-context = "\n\n".join([d.page_content for d in docs])
+def process_websitewise_scraped():
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    scraped_folder = os.path.join("notices", date_str)
 
-# Run chain
-result = chain.invoke({"context": context})
+    if not os.path.exists(scraped_folder):
+        print(f"No scraped data found for {date_str}")
+        return
 
-with open("output.json", "w", encoding="utf-8") as f:
-    json.dump(result, f, ensure_ascii=False, indent=1)
+    for file in os.listdir(scraped_folder):
+        if file.endswith(".json"):
+            file_path = os.path.join(scraped_folder, file)
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                website_name = data.get("name", file.replace(".json", ""))
+                content = data.get("content", "")
+                if not content:
+                    continue
+
+                # Run LLM
+                context = content
+                chain = template | model | fixed_parser
+                try:
+                    structured_result = chain.invoke(
+                        {"context": context, "date_ad": date_str}
+                    )
+                    save_structured_json(website_name, structured_result)
+                except Exception as e:
+                    print(f"Error processing {website_name}: {e}")
+
+
+if __name__ == "__main__":
+    process_websitewise_scraped()
